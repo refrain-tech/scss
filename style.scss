@@ -1,7 +1,9 @@
 ---
 ---
 
-@import 'https://refrain-tech.github.io/res/color.scss';
+@import 'color';
+
+$list: 'red', 'green', 'blue';
 
 @function test($color) {
   $result: transparent;
@@ -14,7 +16,7 @@
   }
   @return $result;
 }
-$list: 'red', 'green', 'blue';
+
 .parent {
   height: 5rem;
   width: 100%;
@@ -26,6 +28,9 @@ $list: 'red', 'green', 'blue';
     }
   }
 }
+
+
+
 /*
 @mixin bbc($category) {
   @if $category == 'article' {
