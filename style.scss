@@ -1,15 +1,6 @@
 ---
 ---
 
-$list: 'article', 'service', 'pixiv', 'youtube', 'other';
-.parent {
-  background: var(--white);
-  @each $category in $list {
-    &[category = '#{$category}'] .child {
-      @include bbc('#{$category}');
-    }
-  }
-}
 @mixin bbc($category) {
   @if $category == 'article' {
     border-bottom-color: var(--green);
@@ -21,5 +12,16 @@ $list: 'article', 'service', 'pixiv', 'youtube', 'other';
     border-bottom-color: var(--red);
   } @else if $category == 'other' {
     border-bottom-color: var(--gray);
+  }
+}
+
+$list: 'article', 'service', 'pixiv', 'youtube', 'other';
+
+.parent {
+  background: var(--white);
+  @each $category in $list {
+    &[category = '#{$category}'] .child {
+      @include bbc('#{$category}');
+    }
   }
 }
