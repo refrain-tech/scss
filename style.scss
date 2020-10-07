@@ -1,8 +1,11 @@
 ---
 ---
 
-@import 'color';
+@charset 'utf-8';
 
+$red: rgb(191, 63, 63);
+$green: rgb(63, 191, 63);
+$blue: rgb(63, 63, 191);
 $list: 'red', 'green', 'blue';
 
 @function test($color) {
