@@ -5,7 +5,7 @@
   $result: transparent;
   @if $category == 'article' {
     $result: var(--green);
-  } @else if $category == 'article' {
+  } @else if $category == 'service' {
     $result: var(--blue);
   } @else if $category == 'pixiv' {
     $result: var(--cyan);
