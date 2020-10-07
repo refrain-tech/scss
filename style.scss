@@ -1,14 +1,16 @@
 ---
 ---
 
+@import '/res/color';
+
 @function test($color) {
   $result: transparent;
   @if $color == 'red' {
-    $result: var(--red);
+    $result: $red;
   } @else if $color == 'green' {
-    $result: var(--green);
+    $result: $green;
   } @else if $color == 'blue' {
-    $result: var(--blue);
+    $result: $blue;
   }
   @return $result;
 }
