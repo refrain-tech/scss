@@ -6,20 +6,22 @@ $list: 'article', 'service', 'pixiv', 'youtube', 'other';
   background: var(--white);
   @each $category in $list {
     &[category = '#{$category}'] .child {
-      @include bbc($category);
+      border-bottom-color: bbc($category);
     }
   }
 }
-@mixin bbc($category) {
+@function bbc($category) {
+  $result: none;
   @if $category == 'article' {
-    border-bottom-color: var(--green);
+    $result: var(--green);
   } @else if $category == 'article' {
-    border-bottom-color: var(--blue);
+    $result: var(--blue);
   } @else if $category == 'pixiv' {
-    border-bottom-color: var(--cyan);
+    $result: var(--cyan);
   } @else if $category == 'youtube' {
-    border-bottom-color: var(--red);
+    $result: var(--red);
   } @else if $category == 'other' {
-    border-bottom-color: var(--gray);
+    $result: var(--gray);
   }
+  @return $result;
 }
