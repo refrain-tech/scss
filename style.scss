@@ -1,28 +1,22 @@
 ---
 ---
 
-@function bbc($category) {
+@function test($color) {
   $result: transparent;
-  @if $category == 'article' {
-    $result: var(--green);
-  } @else if $category == 'service' {
-    $result: var(--blue);
-  } @else if $category == 'pixiv' {
-    $result: var(--cyan);
-  } @else if $category == 'youtube' {
+  @if $color == 'red' {
     $result: var(--red);
-  } @else if $category == 'other' {
-    $result: var(--gray);
+  } @else if $color == 'green' {
+    $result: var(--green);
+  } @else if $color == 'blue' {
+    $result: var(--blue);
   }
   @return $result;
 }
-
-$list: 'article', 'service', 'pixiv', 'youtube', 'other';
-
+$list: 'red', 'green', 'blue';
 .parent {
-  @each $category in $list {
-    &[category = '#{$category}'] .child {
-      border-bottom-color: bbc('#{$category}');
+  @each $color in $list {
+    &[color = '#{$color}'] .child {
+      background: test('#{$color}');
     }
   }
 }
