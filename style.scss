@@ -18,7 +18,6 @@
 $list: 'article', 'service', 'pixiv', 'youtube', 'other';
 
 .parent {
-  background: var(--white);
   @each $category in $list {
     &[category = '#{$category}'] .child {
       @include bbc('#{$category}');
