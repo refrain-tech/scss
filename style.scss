@@ -14,9 +14,13 @@
 }
 $list: 'red', 'green', 'blue';
 .parent {
+  height: 5rem;
+  width: 100%;
   @each $color in $list {
     &[color = '#{$color}'] .child {
       background: test('#{$color}');
+      height: 100%;
+      width: 100%;
     }
   }
 }
