@@ -2,17 +2,10 @@
 ---
 
 $list: 'article', 'service', 'pixiv', 'youtube', 'other';
-.TVOxHpZ9 {
-  background: var(--background);
-  border: solid 0.1rem var(--background-accent);
-  border-radius: 1rem;
-  color: var(--color);
-  display: block;
-  padding: 1rem;
-  margin: 0.5rem;
-  text-decoration: none;
+.parent {
+  background: var(--white);
   @each $category in $list {
-    &[category = '#{$category}'] .e {
+    &[category = '#{$category}'] .child {
       @include bbc($category);
     }
   }
