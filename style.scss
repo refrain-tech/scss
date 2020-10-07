@@ -6,7 +6,7 @@ $list: 'article', 'service', 'pixiv', 'youtube', 'other';
   background: var(--white);
   @each $category in $list {
     &[category = '#{$category}'] .child {
-      @import bbc('#{$category}');
+      @include bbc('#{$category}');
     }
   }
 }
