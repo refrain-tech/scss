@@ -1,6 +1,32 @@
 ---
 ---
 
+@function bbc($category) {
+  $result: transparent;
+  @if $category == 'article' {
+    $result: var(--green);
+  } @else if $category == 'article' {
+    $result: var(--blue);
+  } @else if $category == 'pixiv' {
+    $result: var(--cyan);
+  } @else if $category == 'youtube' {
+    $result: var(--red);
+  } @else if $category == 'other' {
+    $result: var(--gray);
+  }
+  @return $result;
+}
+
+$list: 'article', 'service', 'pixiv', 'youtube', 'other';
+
+.parent {
+  @each $category in $list {
+    &[category = '#{$category}'] .child {
+      border-bottom-color: bbc('#{$category}');
+    }
+  }
+}
+/*
 @mixin bbc($category) {
   @if $category == 'article' {
     border-bottom-color: var(--green);
@@ -24,3 +50,4 @@ $list: 'article', 'service', 'pixiv', 'youtube', 'other';
     }
   }
 }
+*/
